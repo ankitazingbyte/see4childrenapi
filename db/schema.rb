@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180301104949) do
+ActiveRecord::Schema.define(version: 20180305053927) do
+
+  create_table "children", force: :cascade do |t|
+    t.string "name"
+    t.string "child_code"
+    t.string "gender"
+    t.string "image"
+    t.string "dob"
+    t.string "education"
+    t.string "hobby"
+    t.string "school"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "event_type"
+    t.string "description"
+    t.string "image"
+    t.string "address"
+    t.string "organizer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ngos", force: :cascade do |t|
     t.string "name"
