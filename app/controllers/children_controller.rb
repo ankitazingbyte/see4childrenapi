@@ -46,6 +46,6 @@ class ChildrenController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def child_params
-      params.require(:child).permit(:name, :child_code, :gender, :image, :dob, :education, :hobby, :school)
+      params.permit(:name, :child_code, :gender, :image, :dob, :education, :hobby, :school)
     end
 end

@@ -16,9 +16,8 @@ class Api::V1::NgosController < ApplicationController
   # POST /ngos
   def create
     @ngo = Ngo.new(ngo_params)
-
     if @ngo.save
-      render json: @ngo, status: :created, location: @ngo
+      render json: @ngo, status: :created
     else
       render json: @ngo.errors, status: :unprocessable_entity
     end
@@ -46,6 +45,6 @@ class Api::V1::NgosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def ngo_params
-      params.require(:ngo).permit(:name, :email, :state, :city, :zip_code, :address, :director, :no_of_children, :total_staff, :establish, :area)
+      params.permit(:name, :email, :state, :city, :zip_code, :address, :director, :no_of_children, :total_staff, :establish, :area)
     end
 end
