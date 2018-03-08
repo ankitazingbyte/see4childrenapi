@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305053927) do
+ActiveRecord::Schema.define(version: 20180308124353) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -62,6 +62,9 @@ ActiveRecord::Schema.define(version: 20180305053927) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "rest_password_token"
+    t.datetime "rest_password_sent_at"
+    t.string "unconfirmed_email"
     t.index ["email"], name: "index_users_on_email"
   end
 
